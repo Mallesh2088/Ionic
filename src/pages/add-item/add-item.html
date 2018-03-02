@@ -1,0 +1,27 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Add a List</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+          <ion-label floating>Shop Name</ion-label>
+          <ion-input type="text" [(ngModel)]="shopName"></ion-input>
+        </ion-item>
+        <ion-item-sliding *ngFor="let item of items; let i = index">
+            <ion-item >
+                <ion-label floating>Item Name</ion-label>
+                <ion-input [(ngModel)]="items[i].value" type="text"></ion-input>
+            </ion-item>
+            <ion-item-options>
+                    <button danger (click)="deleteItem(item)"><ion-icon name="trash"></ion-icon></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item>
+            <button ion-button outline (click)="addItem();">Add Item</button>
+          </ion-item>
+      </ion-list>
+ <button ion-button full color="secondary" (click)="saveList();">Save</button>
+</ion-content>

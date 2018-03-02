@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title>Shopping List</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let shop of shops" (click)="viewShop(item)">{{item.title}}</ion-item>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab (click)="showAddListPage()" color="secondary"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
